@@ -31,3 +31,7 @@ func _on_activate_zone_body_entered(body: Node2D) -> void:
 func _on_activate_zone_body_exited(body: Node2D) -> void:
 	animation_player.play("Idle")
 	timer.stop()
+	
+func _on_hurt_box_area_entered(area: Area2D) -> void:
+	print("Haaaaaaa!")
+	queue_free()

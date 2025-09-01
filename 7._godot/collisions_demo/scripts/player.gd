@@ -43,3 +43,15 @@ func _physics_process(delta: float) -> void:
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	print("OUCH!")
+
+func invulnerable():
+	var originales_hitbox = $Hitbox.collision_layer
+	var originales_hurtbox = $Hurtbox.collision_mask
+	$Hitbox.collision_layer = originales_hitbox | 1 << 5
+	$Hitbox.monitoring = true
+	$Hurtbox.collision_mask = 0
+	$Hurtbox.monitoring = true
+	print("invulnerable")
+	await get_tree().create_timer(10.0).timeout
+	$Hitbox.collision_layer = originales_hitbox
+	$Hurtbox.collision_layer = originales_hurtbox

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ub7pcmbtaeob"]
+[gd_scene load_steps=12 format=3 uid="uid://ub7pcmbtaeob"]
 
 [ext_resource type="Script" uid="uid://dh1ymy0kotrpi" path="res://scripts/enemya.gd" id="1_320d0"]
 [ext_resource type="Texture2D" uid="uid://7owv08jmf8kq" path="res://assets/textures/enemy_a_attack_rest.png" id="1_dhfb4"]
@@ -105,6 +105,9 @@ size = Vector2(445.882, 83.4795)
 [sub_resource type="CircleShape2D" id="CircleShape2D_8qclf"]
 radius = 24.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_320d0"]
+radius = 49.0102
+
 [node name="EnemyA" type="Node2D"]
 script = ExtResource("1_320d0")
 
@@ -133,5 +136,14 @@ shape = SubResource("RectangleShape2D_k7l8r")
 position = Vector2(0, -31)
 shape = SubResource("CircleShape2D_8qclf")
 
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, -25)
+shape = SubResource("CircleShape2D_320d0")
+
 [connection signal="body_entered" from="ActivateZone" to="." method="_on_activate_zone_body_entered"]
 [connection signal="body_exited" from="ActivateZone" to="." method="_on_activate_zone_body_exited"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

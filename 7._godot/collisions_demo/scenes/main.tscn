@@ -48,25 +48,9 @@ scale = Vector2(8.13, 1)
 position = Vector2(617, 472)
 
 [node name="EnemyA3" parent="." instance=ExtResource("7_o6xl0")]
-position = Vector2(314, 501)
-
-[node name="EnemyB2" parent="." instance=ExtResource("6_tefeu")]
-position = Vector2(1075, 140)
-
-[node name="EnemyA" parent="." instance=ExtResource("7_o6xl0")]
-position = Vector2(795, 509)
-
-[node name="EnemyA2" parent="." instance=ExtResource("7_o6xl0")]
-position = Vector2(467, 642)
-
-[node name="EnemyA4" parent="." instance=ExtResource("7_o6xl0")]
-position = Vector2(1113, 330)
-
-[node name="EnemyA5" parent="." instance=ExtResource("7_o6xl0")]
-position = Vector2(585, 144)
-
-[node name="EnemyB3" parent="." instance=ExtResource("6_tefeu")]
-position = Vector2(307, 409)
+position = Vector2(262, 524)
 
 [node name="Diamont" parent="." instance=ExtResource("8_tipki")]
 position = Vector2(440, 485)
+
+[connection signal="collected" from="Diamont" to="." method="on_diamante_collected"]
