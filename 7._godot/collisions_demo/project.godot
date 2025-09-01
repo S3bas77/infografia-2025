@@ -11,8 +11,15 @@ config_version=5
 [application]
 
 config/name="collisions_demo"
+run/main_scene="uid://dx2fcqqpb4i4s"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[global_group]
+
+player=""
+enemies=""
+diamonds=""
 
 [layer_names]
 

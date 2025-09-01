@@ -100,7 +100,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k7l8r"]
-size = Vector2(244, 91)
+size = Vector2(445.882, 83.4795)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8qclf"]
 radius = 24.0
@@ -119,18 +119,19 @@ libraries = {
 autoplay = "Idle"
 
 [node name="ActivateZone" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActivateZone"]
-position = Vector2(0, -36.5)
+position = Vector2(-1, -186)
+scale = Vector2(0.744591, -5.04641)
 shape = SubResource("RectangleShape2D_k7l8r")
-debug_color = Color(0, 0.588235, 0.756863, 0.160784)
 
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, -40)
+position = Vector2(0, -31)
 shape = SubResource("CircleShape2D_8qclf")
-debug_color = Color(0.714092, 0.483097, 0.0397373, 0.42)
 
 [connection signal="body_entered" from="ActivateZone" to="." method="_on_activate_zone_body_entered"]
 [connection signal="body_exited" from="ActivateZone" to="." method="_on_activate_zone_body_exited"]

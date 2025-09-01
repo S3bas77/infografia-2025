@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://coq3v1r774iea" path="res://assets/textures/key.png" id="1_yk2u2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yk2u2"]
-size = Vector2(42, 46)
+size = Vector2(49, 46)
 
 [sub_resource type="Animation" id="Animation_fttkb"]
 resource_name = "Default"
@@ -51,6 +51,7 @@ script = ExtResource("1_fttkb")
 texture = ExtResource("1_yk2u2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 0)
 shape = SubResource("RectangleShape2D_yk2u2")
 debug_color = Color(1.8049e-06, 0.649735, 0.130521, 0.42)
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://c5d0lmxo7238y"]
+[gd_scene load_steps=14 format=4 uid="uid://c5d0lmxo7238y"]
 
 [ext_resource type="Texture2D" uid="uid://f5c86pyxevhv" path="res://assets/textures/World/GrassBackground.png" id="1_us8m7"]
 [ext_resource type="PackedScene" uid="uid://cl5g2chfojftj" path="res://scenes/bush.tscn" id="2_bvh6e"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ls1d16h7bdbe" path="res://assets/textures/World/CliffTileset.png" id="3_58buj"]
 [ext_resource type="PackedScene" uid="uid://c6tq137wg7t8m" path="res://scenes/grass.tscn" id="6_uxuxb"]
 [ext_resource type="PackedScene" uid="uid://c3wshytpftn5q" path="res://scenes/bat.tscn" id="7_8kxu3"]
+[ext_resource type="Texture2D" uid="uid://df3n8w17fx2hx" path="res://vidabar.png" id="8_tipki"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_muijd"]
 texture = ExtResource("2_tfbww")
@@ -881,3 +882,24 @@ position = Vector2(136, 18)
 [node name="Bat4" parent="Enemies" instance=ExtResource("7_8kxu3")]
 position = Vector2(176, 165)
 target = Vector2(100, 50)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HPBar" type="TextureProgressBar" parent="UI"]
+offset_left = 10.0
+offset_top = 1.0
+offset_right = 269.0
+offset_bottom = 195.0
+scale = Vector2(0.165511, 0.13212)
+value = 100.0
+texture_progress = ExtResource("8_tipki")
+
+[node name="HPLabel" type="Label" parent="UI"]
+offset_left = 66.0
+offset_top = 2.0
+offset_right = 106.0
+offset_bottom = 25.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="UI"]
+offset_right = 40.0
+offset_bottom = 40.0
